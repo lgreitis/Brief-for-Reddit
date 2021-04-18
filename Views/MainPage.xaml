@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Brief_for_Reddit.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:res="clr-namespace:Brief_for_Reddit.Resources"
+    xmlns:scroll="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.InfiniteScrolling">
+    <ContentPage.Content>
+        <ListView
+            IsPullToRefreshEnabled="true"
+			BackgroundColor="#191919"
+			x:Name="listView"
+			RowHeight="360"
+			ItemSelected="OnItemSelected"
+			ItemTapped="OnItemTapped">
+            <ListView.Behaviors>
+                <scroll:InfiniteScrollBehavior IsLoadingMore="{Binding IsWorking}"/>
+            </ListView.Behaviors>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
